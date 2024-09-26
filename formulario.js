@@ -1,8 +1,8 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelector(".formulario")
 
 formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault();
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -11,22 +11,22 @@ formulario.onsubmit = function(e) {
   var nombre = n.value
   var edad = e.value
 
-  var i = na.selectedIndex
-  var nacionalidad = na.options[i].value
-  console.log(nombre, edad)
-  console.log(nacionalidad)
+  var i = na.selectedIndex;
+  var nacionalidad = na.options[i].value;
+  console.log(nombre, edad);
+  console.log(nacionalidad);
 
   if (nombre.length === 0) {
-    n.classList.add("error")
+    n.classList.add("error");
   }
   if (edad < 18 || edad > 120) {
-    e.classList.add("error")
+    e.classList.add("error");
   }
 
 if (nombre.length > 0 
   && (edad > 18 
     && edad < 120) ) {
-  agregarInvitado(nombre, edad, nacionalidad)
+  agregarInvitado(nombre, edad, nacionalidad);
   }
 }
 
